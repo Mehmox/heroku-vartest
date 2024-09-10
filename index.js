@@ -1,11 +1,11 @@
-// require('dotenv').config();
+//require('dotenv').config();
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const path = require("path");
 const port = process.env.PORT || 3000;
 let e = "no error";
-let uri = process.env.uri
+let uri = process.env.MONGO_URI
 mongoose.connect(uri)
     .then((r) => {
         console.log("MONGO CONNECTED!!")
