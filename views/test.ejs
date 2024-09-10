@@ -9,6 +9,13 @@
 
 <body>
     <h1>test sayfası (datasız)</h1>
+    <% try {%>
+        <h1>
+            <%= e %>
+        </h1>
+        <%} catch (error) {%>
+            Error cant write
+            <%} %>
 </body>
 
 </html>

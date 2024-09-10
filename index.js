@@ -1,17 +1,19 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const path = require("path");
 const port = process.env.PORT || 3000
-// let uri = "mongodb://localhost:27017/test_db_connection";
-// mongoose.connect(uri)
-//     .then((r) => {
-//         console.log("MONGO CONNECTED!!")
-//     })
-//     .catch((err) => {
-//         console.log("MONGO ERROR");
-//         console.log(err);
-//     });
+let uri = "mongodb://localhost:27017/test_db_connection";
+let e = "no error";
+mongoose.connect(uri)
+    .then((r) => {
+        console.log("MONGO CONNECTED!!")
+    })
+    .catch((err) => {
+        console.log("MONGO ERROR");
+        console.log(err);
+        e = err
+    });
 
 // const Schema = new mongoose.Schema({
 //     comment: String,
@@ -31,5 +33,5 @@ app.get("/", async (req, res) => {
     // res.render("index", { allData })
     // console.log(allData)
     console.log("hit")
-    res.render("test")
+    res.render("test", { e })
 })
