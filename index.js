@@ -1,10 +1,11 @@
+// require('dotenv').config();
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const path = require("path");
 const port = process.env.PORT || 3000;
 let e = "no error";
-let uri = process.env.uri || "mongodb://localhost:27017/test_db_connection";
+let uri = process.env.uri
 mongoose.connect(uri)
     .then((r) => {
         console.log("MONGO CONNECTED!!")
@@ -28,8 +29,8 @@ app.use(express.urlencoded({ extended: true }))
 app.listen(port, () => console.log(`Lisenning on port: ${port}`))
 
 app.get("/", async (req, res) => {
-    let newData = new data({ comment: "this is my first fake data to test my db" })
-    await newData.save()
+    // let newData = new data({ comment: "this is my first fake data to test my db" })
+    // await newData.save()
     const allData = await data.find({})
     res.render("index", { allData })
     // console.log(allData)
