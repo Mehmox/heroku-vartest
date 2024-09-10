@@ -30,5 +30,6 @@ app.get("/", async (req, res) => {
     // const allData = await data.find({})
     // res.render("index", { allData })
     // console.log(allData)
+    console.log("hit")
     res.render("test")
 })
