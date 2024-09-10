@@ -22,7 +22,7 @@ let e = "no error";
 // const data = mongoose.model("Comment", Schema)
 
 try {
-    const testvar = process.env.TESTVAR; // Environment variable'ı al
+    const testvar = process.env.testvar; // Environment variable'ı al
     if (testvar === '1') // Değeri kontrol et
         e = "connect";
 } catch (error) {
