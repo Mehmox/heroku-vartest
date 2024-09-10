@@ -33,6 +33,7 @@ app.get("/", async (req, res) => {
     // await newData.save()
     const allData = await data.find({})
     res.render("index", { allData })
+    console.log("hit")
     // console.log(allData)
     // res.render("test", { e })
 })
