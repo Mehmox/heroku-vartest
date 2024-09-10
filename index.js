@@ -21,13 +21,13 @@ let e = "no error";
 // })
 // const data = mongoose.model("Comment", Schema)
 
-// try {
-//     const testvar = process.env.TESTVAR; // Environment variable'ı al
-//     if (testvar === '1') // Değeri kontrol et
-//         e = "connect";
-// } catch (error) {
-//     e = "test var not found";
-// }
+try {
+    const testvar = process.env.TESTVAR; // Environment variable'ı al
+    if (testvar === '1') // Değeri kontrol et
+        e = "connect";
+} catch (error) {
+    e = "test var not found";
+}
 
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
