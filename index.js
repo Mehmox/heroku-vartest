@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 const port = process.env.PORT || 3000;
 // let uri = "mongodb://localhost:27017/test_db_connection";
-let uri = "";
+// let uri = "";
 let e = "no error";
 // mongoose.connect(uri)
 //     .then((r) => {
@@ -20,13 +20,13 @@ let e = "no error";
 //     comment: String,
 // })
 // const data = mongoose.model("Comment", Schema)
-try {
-    const testvar = process.env.TESTVAR; // Environment variable'ı al
-    if (testvar === '1') // Değeri kontrol et
-        e = "connect";
-} catch (error) {
-    e = "test var not found";
-}
+// try {
+//     const testvar = process.env.TESTVAR; // Environment variable'ı al
+//     if (testvar === '1') // Değeri kontrol et
+//         e = "connect";
+// } catch (error) {
+//     e = "test var not found";
+// }
 
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
